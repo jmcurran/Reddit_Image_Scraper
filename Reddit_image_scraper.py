@@ -206,7 +206,7 @@ def get_client_info():
         with open('config.ini', 'w') as f:
             log('config.ini template created. Please paste in your client secret. (And RTM)')
             f.write("""[DEFAULT]
-ext='.webm', '.gif', '.avi', '.mp4', '.jpg', '.png', '.mov', '.ogg', '.wmv', '.mp2', '.mp3', '.mkv'
+ext=.webm, .gif, .avi, .mp4, .jpg, .png', .mov, .ogg, .wmv, .mp2, .mp3, .mkv'
 [ALPHA]
 client_id=PASTE ID HERE
 client_secret=PASTE SECRET HERE
