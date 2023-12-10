@@ -205,7 +205,9 @@ def get_client_info():
     if not os.path.exists('config.ini'):
         with open('config.ini', 'w') as f:
             log('config.ini template created. Please paste in your client secret. (And RTM)')
-            f.write("""[ALPHA]
+            f.write("""[DEFAULT]
+ext='.webm', '.gif', '.avi', '.mp4', '.jpg', '.png', '.mov', '.ogg', '.wmv', '.mp2', '.mp3', '.mkv'
+[ALPHA]
 client_id=PASTE ID HERE
 client_secret=PASTE SECRET HERE
 query_limit=2000
@@ -220,7 +222,8 @@ minimum_file_size_kb=12.0""")
     ratelimit_sleep = config["ALPHA"]["ratelimit_sleep"]
     failure_sleep = config["ALPHA"]["failure_sleep"]
     minimum_file_size_kb = config["ALPHA"]["minimum_file_size_kb"]
-    return id, secret, int(query_limit), int(ratelimit_sleep), int(failure_sleep), float(minimum_file_size_kb)
+    ext=config["ALPHA"]["ext"]
+    return id, secret, int(query_limit), int(ratelimit_sleep), int(failure_sleep), float(minimum_file_size_kb), ext
 
 
 def is_media_file(uri):
