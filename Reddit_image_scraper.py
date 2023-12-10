@@ -460,8 +460,8 @@ def read_img_links(submissions, url_list, user_submissions):
 
 if __name__ == '__main__':
     # Get client info
-    ClientInfo.id, ClientInfo.secret, query_lookup_limit, ratelimit_sleep, failure_sleep, minimum_file_size_kb = get_client_info()
-
+    ClientInfo.id, ClientInfo.secret, query_lookup_limit, ratelimit_sleep, failure_sleep, minimum_file_size_kb, ext = get_client_info()
+    print(ext)
     # Create project directories
     create_directories()
 
