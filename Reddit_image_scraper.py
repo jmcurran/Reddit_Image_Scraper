@@ -223,7 +223,7 @@ minimum_file_size_kb=12.0""")
     failure_sleep = config["ALPHA"]["failure_sleep"]
     minimum_file_size_kb = config["ALPHA"]["minimum_file_size_kb"]
     ext=config["ALPHA"]["ext"]
-    return id, secret, int(query_limit), int(ratelimit_sleep), int(failure_sleep), float(minimum_file_size_kb), ext
+    return id, secret, int(query_limit), int(ratelimit_sleep), int(failure_sleep), float(minimum_file_size_kb), ext.split(',')
 
 
 def is_media_file(uri):
